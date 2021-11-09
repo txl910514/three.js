@@ -12,7 +12,7 @@ function WebGLPrograms( renderer, cubemaps, cubeuvmaps, extensions, capabilities
 	const floatVertexTextures = capabilities.floatVertexTextures;
 	const maxVertexUniforms = capabilities.maxVertexUniforms;
 	const vertexTextures = capabilities.vertexTextures;
-
+	console.log("precision10")
 	let precision = capabilities.precision;
 
 	const shaderIDs = {
@@ -129,11 +129,11 @@ function WebGLPrograms( renderer, cubemaps, cubeuvmaps, extensions, capabilities
 		// (not to blow over maxLights budget)
 
 		const maxBones = object.isSkinnedMesh ? getMaxBones( object ) : 0;
-
+		console.log("precision11")
 		if ( material.precision !== null ) {
 
 			precision = capabilities.getMaxPrecision( material.precision );
-
+			console.log("precision12")
 			if ( precision !== material.precision ) {
 
 				console.warn( 'THREE.WebGLProgram.getParameters:', material.precision, 'not supported, using', precision, 'instead.' );

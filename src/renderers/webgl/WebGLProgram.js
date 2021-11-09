@@ -263,19 +263,19 @@ function loopReplacer( match, start, end, snippet ) {
 //
 
 function generatePrecision( parameters ) {
-
+	console.log("precision6")
 	let precisionstring = 'precision ' + parameters.precision + ' float;\nprecision ' + parameters.precision + ' int;';
 
 	if ( parameters.precision === 'highp' ) {
-
+		console.log("precision7")
 		precisionstring += '\n#define HIGH_PRECISION';
 
 	} else if ( parameters.precision === 'mediump' ) {
-
+		console.log("precision8")
 		precisionstring += '\n#define MEDIUM_PRECISION';
 
 	} else if ( parameters.precision === 'lowp' ) {
-
+		console.log("precisio9")
 		precisionstring += '\n#define LOW_PRECISION';
 
 	}

@@ -25,7 +25,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 	function getMaxPrecision( precision ) {
 
 		if ( precision === 'highp' ) {
-
+			console.log("precision3")
 			if ( gl.getShaderPrecisionFormat( gl.VERTEX_SHADER, gl.HIGH_FLOAT ).precision > 0 &&
 				gl.getShaderPrecisionFormat( gl.FRAGMENT_SHADER, gl.HIGH_FLOAT ).precision > 0 ) {
 
@@ -38,7 +38,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 		}
 
 		if ( precision === 'mediump' ) {
-
+			console.log("precision4")
 			if ( gl.getShaderPrecisionFormat( gl.VERTEX_SHADER, gl.MEDIUM_FLOAT ).precision > 0 &&
 				gl.getShaderPrecisionFormat( gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT ).precision > 0 ) {
 
@@ -56,7 +56,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 	const isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext ) ||
 		( typeof WebGL2ComputeRenderingContext !== 'undefined' && gl instanceof WebGL2ComputeRenderingContext );
 	/* eslint-enable no-undef */
-
+	console.log("precision5")
 	let precision = parameters.precision !== undefined ? parameters.precision : 'highp';
 	const maxPrecision = getMaxPrecision( precision );
 
