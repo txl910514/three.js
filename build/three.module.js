@@ -7860,7 +7860,7 @@ class Material extends EventDispatcher {
 		this.shadowSide = null;
 
 		this.colorWrite = true;
-
+		console.log("precision1");
 		this.precision = null; // override the renderer's default precision for this material
 
 		this.polygonOffset = false;
@@ -8255,7 +8255,7 @@ class Material extends EventDispatcher {
 		this.shadowSide = source.shadowSide;
 
 		this.colorWrite = source.colorWrite;
-
+		console.log("precision2");
 		this.precision = source.precision;
 
 		this.polygonOffset = source.polygonOffset;
@@ -14531,7 +14531,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 	function getMaxPrecision( precision ) {
 
 		if ( precision === 'highp' ) {
-
+			console.log("precision3");
 			if ( gl.getShaderPrecisionFormat( 35633, 36338 ).precision > 0 &&
 				gl.getShaderPrecisionFormat( 35632, 36338 ).precision > 0 ) {
 
@@ -14544,7 +14544,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 		}
 
 		if ( precision === 'mediump' ) {
-
+			console.log("precision4");
 			if ( gl.getShaderPrecisionFormat( 35633, 36337 ).precision > 0 &&
 				gl.getShaderPrecisionFormat( 35632, 36337 ).precision > 0 ) {
 
@@ -14562,7 +14562,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 	const isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext ) ||
 		( typeof WebGL2ComputeRenderingContext !== 'undefined' && gl instanceof WebGL2ComputeRenderingContext );
 	/* eslint-enable no-undef */
-
+	console.log("precision5");
 	let precision = parameters.precision !== undefined ? parameters.precision : 'highp';
 	const maxPrecision = getMaxPrecision( precision );
 
@@ -18188,19 +18188,19 @@ function loopReplacer( match, start, end, snippet ) {
 //
 
 function generatePrecision( parameters ) {
-
+	console.log("precision6");
 	let precisionstring = 'precision ' + parameters.precision + ' float;\nprecision ' + parameters.precision + ' int;';
 
 	if ( parameters.precision === 'highp' ) {
-
+		console.log("precision7");
 		precisionstring += '\n#define HIGH_PRECISION';
 
 	} else if ( parameters.precision === 'mediump' ) {
-
+		console.log("precision8");
 		precisionstring += '\n#define MEDIUM_PRECISION';
 
 	} else if ( parameters.precision === 'lowp' ) {
-
+		console.log("precisio9");
 		precisionstring += '\n#define LOW_PRECISION';
 
 	}
@@ -18824,7 +18824,7 @@ function WebGLPrograms( renderer, cubemaps, cubeuvmaps, extensions, capabilities
 	const floatVertexTextures = capabilities.floatVertexTextures;
 	const maxVertexUniforms = capabilities.maxVertexUniforms;
 	const vertexTextures = capabilities.vertexTextures;
-
+	console.log("precision10");
 	let precision = capabilities.precision;
 
 	const shaderIDs = {
@@ -18941,11 +18941,11 @@ function WebGLPrograms( renderer, cubemaps, cubeuvmaps, extensions, capabilities
 		// (not to blow over maxLights budget)
 
 		const maxBones = object.isSkinnedMesh ? getMaxBones( object ) : 0;
-
+		console.log("precision11");
 		if ( material.precision !== null ) {
 
 			precision = capabilities.getMaxPrecision( material.precision );
-
+			console.log("precision12");
 			if ( precision !== material.precision ) {
 
 				console.warn( 'THREE.WebGLProgram.getParameters:', material.precision, 'not supported, using', precision, 'instead.' );
