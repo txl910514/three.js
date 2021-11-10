@@ -14532,6 +14532,7 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 
 		if ( precision === 'highp' ) {
 			console.log("precision3");
+			console.log(gl);
 			if ( gl.getShaderPrecisionFormat( 35633, 36338 ).precision > 0 &&
 				gl.getShaderPrecisionFormat( 35632, 36338 ).precision > 0 ) {
 

@@ -11164,6 +11164,8 @@
 		function getMaxPrecision(precision) {
 			if (precision === 'highp') {
 				console.log("precision3");
+				console.log(gl);
+
 				if (gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).precision > 0 && gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT).precision > 0) {
 					return 'highp';
 				}
