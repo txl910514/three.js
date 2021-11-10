@@ -14531,12 +14531,8 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 	function getMaxPrecision( precision ) {
 
 		if ( precision === 'highp' ) {
-			console.log("precision3");
-			console.log(gl.getShaderPrecisionFormat);
-			console.log(gl.getShaderPrecisionFormat( 35633, 36338 ));
-			console.log(gl.getShaderPrecisionFormat( 35632, 36338 ));
-			if ( gl.getShaderPrecisionFormat( 35633, 36338 ).precision > 0 &&
-				gl.getShaderPrecisionFormat( 35632, 36338 ).precision > 0 ) {
+			if ( (gl.getShaderPrecisionFormat( 35633, 36338 ) || {}).precision > 0 &&
+				(gl.getShaderPrecisionFormat( 35632, 36338 ) || {}).precision > 0 ) {
 
 				return 'highp';
 
@@ -14548,8 +14544,8 @@ function WebGLCapabilities( gl, extensions, parameters ) {
 
 		if ( precision === 'mediump' ) {
 			console.log("precision4");
-			if ( gl.getShaderPrecisionFormat( 35633, 36337 ).precision > 0 &&
-				gl.getShaderPrecisionFormat( 35632, 36337 ).precision > 0 ) {
+			if ( (gl.getShaderPrecisionFormat( 35633, 36337 ) || {}).precision > 0 &&
+				(gl.getShaderPrecisionFormat( 35632, 36337 ) || {}).precision > 0 ) {
 
 				return 'mediump';
 

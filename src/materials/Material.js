@@ -54,7 +54,6 @@ class Material extends EventDispatcher {
 		this.shadowSide = null;
 
 		this.colorWrite = true;
-		console.log("precision1")
 		this.precision = null; // override the renderer's default precision for this material
 
 		this.polygonOffset = false;
@@ -449,7 +448,6 @@ class Material extends EventDispatcher {
 		this.shadowSide = source.shadowSide;
 
 		this.colorWrite = source.colorWrite;
-		console.log("precision2")
 		this.precision = source.precision;
 
 		this.polygonOffset = source.polygonOffset;

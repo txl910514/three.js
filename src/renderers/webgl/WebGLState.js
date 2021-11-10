@@ -344,7 +344,9 @@ function WebGLState( gl, extensions, capabilities ) {
 	let lineWidthAvailable = false;
 	let version = 0;
 	const glVersion = gl.getParameter( gl.VERSION );
-
+	console.log(gl);
+	console.log(gl.VERSION);
+	console.log(gl.getParameter);
 	if ( glVersion.indexOf( 'WebGL' ) !== - 1 ) {
 
 		version = parseFloat( /^WebGL (\d)/.exec( glVersion )[ 1 ] );
